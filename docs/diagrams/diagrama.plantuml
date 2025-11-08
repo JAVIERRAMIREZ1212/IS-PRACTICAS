@@ -1,6 +1,23 @@
-@startuml
-class Ejemplo {
+@startuml s
+' Diagrama de clases de ejemplo
+class Usuario {
   - nombre: String
-  + metodo(): void
+  - email: String
+  + login(): boolean
+  + logout(): void
 }
+
+class Proyecto {
+  - nombre: String
+  - fechaCreacion: Date
+  + crearTarea(): void
+}
+
+Usuario "1" -- "*" Proyecto : crea >
+
+note right of Usuario
+  Esta clase representa
+  un usuario del sistema
+end note
+
 @enduml
